@@ -1,3 +1,5 @@
+/* eslint-disable */
+``
 import React, {
 	Suspense, useRef, useState, useEffect,
 } from 'react';
@@ -149,10 +151,10 @@ function Picker() {
 	const snap = useSnapshot(state);
 	return (
 	// eslint-disable-next-line react/jsx-no-comment-textnodes
-		<div style={{ display: snap.current ? 'block' : 'none' }}>
+		<div className="" style={{ display: snap.current ? 'block' : 'none' }}>
 			{/* eslint-disable-next-line no-return-assign */}
 			<HexColorPicker className="picker" color={snap.items[snap.current]} onChange={(color) => (state.items[snap.current] = color)} />
-			<h1>{snap.current}</h1>
+			<h1 className="text-5xl tracking-tighter ml-7">{snap.current}</h1>
 		</div>
 	);
 }
@@ -179,7 +181,7 @@ function ContentBrowser() {
 					{/* <PopoverHeader>Confirmation!</PopoverHeader> */}
 					<PopoverBody className="flex justify-evenly">
 						{/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
-						{/* eslint-disable-next-line no-return-assign */}
+						{/* eslint-disable-next-line no-return-assign,jsx-a11y/click-events-have-key-events */}
 						<div
 							className="border border-amber-200 w-10 h-10 bg-red-600 cursor-pointer"
 							onClick={() => (state.items.laces = 'red')}
